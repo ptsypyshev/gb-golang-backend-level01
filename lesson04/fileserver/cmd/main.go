@@ -10,6 +10,8 @@ import (
 	"github.com/ptsypyshev/gb-golang-backend-level01/lesson04/fileserver/internal/handlers"
 )
 
+const TenConst = 10
+
 func main() {
 	cwd, err := os.Getwd()
 	if err != nil {
@@ -29,8 +31,8 @@ func main() {
 	dirToServe := http.Dir(uploadHandler.UploadDir)
 	fs := &http.Server{
 		Addr:         uploadHandler.HostAddr,
-		ReadTimeout:  10 * time.Second,
-		WriteTimeout: 10 * time.Second,
+		ReadTimeout:  TenConst * time.Second,
+		WriteTimeout: TenConst * time.Second,
 	}
 
 	http.Handle("/", filesHandler)

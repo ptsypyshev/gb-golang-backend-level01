@@ -17,12 +17,17 @@ type File struct {
 	Size int64
 }
 
+const (
+	LenOne = iota + 1
+	LenTwo
+)
+
 func SplitName(filename string) (name, ext string) {
 	splitName := strings.Split(filename, ".")
 	switch len(splitName) {
-	case 1:
+	case LenOne:
 		return filename, ""
-	case 2:
+	case LenTwo:
 		return splitName[0], splitName[1]
 	default:
 		lastElem := len(splitName) - 1
