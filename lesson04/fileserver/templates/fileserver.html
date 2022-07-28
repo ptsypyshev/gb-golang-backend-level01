@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fileserver</title>
+    <style>
+        table, tr, th, td {border: 1px solid #dddfe1; margin-top: 20px; border-collapse: collapse; padding: 10px; }
+        table {align: center; width: 600px;}
+        th {text-align: left;}
+    </style>
+</head>
+<body>
+<header>
+    <p><a href="/">Home</a> | <a href="/upload/">Upload File</a></p>
+</header>
+    <h1>Files at your server:</h1>
+
+    <form action="/" method="get">
+        <label for="ext">You can filter files by extension:</label>
+        <input type="text" id="ext" name="ext">
+        <button type="submit">Filter</button>
+    </form>
+
+    <div>
+        <table>
+            <tr>
+                <th>File Name</th>
+                <th>Extension</th>
+                <th>File Size</th>
+            </tr>
+            {{range .}}
+                <tr>
+                    <td><a href="{{.Link}}">{{.Name}}</a></td>
+                    <td>{{.Ext}}</td>
+                    <td>{{.Size}}</td>
+                </tr>
+            {{end}}
+        </table>
+    </div>
+</body>
+</html>
