@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Success</title>
+</head>
+<body>
+<p><a href="/">Home</a> | <a href="/upload/">Upload File</a></p>
+<h1>Your file is uploaded</h1>
+<div>
+    {{if .Renamed}}
+    <p>It was renamed, because we have a file with the same name in 'upload' directory.</p>
+    {{end}}
+</div>
+<div>
+    <a href="../{{.Link}}">{{.Filename}}</a>
+</div>
+</body>
+</html>

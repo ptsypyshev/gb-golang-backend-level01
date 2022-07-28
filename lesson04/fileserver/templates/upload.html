@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Page</title>
+</head>
+<body>
+<p><a href="/">Home</a> | <a href="/upload/">Upload File</a></p>
+<h1>Upload page!</h1>
+Choose your file and click "Upload" button.
+<form enctype="multipart/form-data" action="/upload/" method="post">
+    <label for="file">Select a file:</label>
+    <input type="file" id="file" name="file">
+    <button type="submit">Upload</button>
+</form>
+</body>
+</html>
